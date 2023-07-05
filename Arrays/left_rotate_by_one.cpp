@@ -1,17 +1,15 @@
 #include<iostream>
 using namespace std;
 
-int remDup(int arr[],int n)
+int* left_rotate(int arr[],int n)
 {
-    int res=1;
+    int x=arr[0];
     for(int i=1;i<n;i++)
     {
-        if(arr[res-1] != arr[i]){
-            arr[res]=arr[i];
-            res++;
-        }
+        arr[i-1]=arr[i];
     }
-    return res;
+    arr[n-1]=x;
+    return arr;
 }
 
 int main()
@@ -25,6 +23,9 @@ int main()
         cin>>arr[i];
     }
 
-    int result = remDup(arr,n);
-    cout<<"result : "<<result;
+    int* result = left_rotate(arr,n);
+    cout<<"Result"<<endl;
+    for(int i=0;i<n;i++){
+        cout<<*(result+i)<<endl;
+    }
 }
