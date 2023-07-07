@@ -8,6 +8,7 @@ int prefix_sum(int arr[],int n)
     for(int i=1;i<n;i++){
         ps[i]=ps[i-1]+arr[i];
     }
+
 }
 
 int main()
