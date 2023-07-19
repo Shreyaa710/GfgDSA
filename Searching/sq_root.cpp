@@ -29,4 +29,3 @@ int main()
     cin>>key;
 
     cout<<sq_root(key);
-}
