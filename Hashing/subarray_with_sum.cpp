@@ -1,33 +1,26 @@
 #include<iostream>
-#include<unordered_map> 
+#include<unordered_set> 
 using namespace std;
 
-int max(int a,int b)
-{
-    if(a>b)
-    return a;
 
-    else 
-    return b;
-}
-
-int chk_sum(int arr[],int n1,int sum)
+bool chk_sum(int arr[],int n1,int sum)
 {
-    unordered_map<int,int> s;
-    int prefix_sum= 0,res=0,result=0;
+    unordered_set<int> s;
+    int prefix_sum= 0;
     for(int i=0;i<n1;i++)
     {
         prefix_sum += arr[i];
         if(prefix_sum == sum)
-        res=i+1;
-
-        if(s.find(prefix_sum - sum) == s.end())
-        s.insert({prefix_sum, i});
+        return true;
 
         if(s.find(prefix_sum - sum) != s.end())
-        res= max(res, i- s[prefix_sum - sum]);
+        return true;
+
+        else
+        s.insert(prefix_sum);
+
     }
-    return res;
+    return false;
 
 }
 
