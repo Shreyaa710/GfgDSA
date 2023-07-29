@@ -1,3 +1,5 @@
+// if the sum of left and right elements of point is equal
+
 #include<iostream>
 using namespace std;
 
