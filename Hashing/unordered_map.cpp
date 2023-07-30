@@ -22,42 +22,42 @@ using namespace std;
 // }
 
 
-// int main()
-// {
-//     unordered_map<string, int> m;
-//     m["shreya"] = 1;
-//     m["happie"] = 0;
-//     m["bread"] = 3;
-
-//     if(m.count("happie") > 0)
-//     cout<<"Found"<<endl;
-
-//     else
-//     cout<<"Not Found"<<endl;
-
-//     for(auto it = m.begin(); it != m.end(); it++)
-//     cout<<(it->first)<<" "<<(it->second)<<endl;
-
-//     return 0;
-// }
-
-
-
 int main()
 {
     unordered_map<string, int> m;
     m["shreya"] = 1;
     m["happie"] = 0;
-    m["bread"] = 7;
-    m["bread"] = 9;
+    m["bread"] = 3;
 
-    cout<<m.size()<<endl;
+    if(m.count("happie") > 0)
+    cout<<"Found"<<endl;
 
-    // m.erase("shreya");
-    // m.erase(m.begin(), m.end());
+    else
+    cout<<"Not Found"<<endl;
 
     for(auto it = m.begin(); it != m.end(); it++)
     cout<<(it->first)<<" "<<(it->second)<<endl;
 
     return 0;
 }
+
+
+
+// int main()
+// {
+//     unordered_map<string, int> m;
+//     m["shreya"] = 1;
+//     m["happie"] = 0;
+//     m["bread"] = 7;
+//     m["bread"] = 9;
+
+//     cout<<m.size()<<endl;
+
+//     // m.erase("shreya");
+//     // m.erase(m.begin(), m.end());
+
+//     for(auto it = m.begin(); it != m.end(); it++)
+//     cout<<(it->first)<<" "<<(it->second)<<endl;
+
+//     return 0;
+// }
