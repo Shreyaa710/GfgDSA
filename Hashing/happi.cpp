@@ -1,26 +1,43 @@
 #include<iostream>
-#include<unordered_set>
 using namespace std;
 
-bool isSumZero(int a[],int size)
-{
-  int pre_sum=0;
-  unordered_set<int> s;
-  for(int i=0;i<size;i++)
-  {
-    pre_sum+=a[i];
-    if(s.find(pre_sum) != s.end())
-      return true;
-    else if(pre_sum==0)
-      return true;
-    else 
-      s.insert(pre_sum);
-  }
-  return false;
-}
+void reverseInGroups(vector<long long>& arr, int n, int k){
+        // code here
+        int c=0;
+        int mul=1;
+        int num=0;
+        bool flag=true;
+        for(int i=0;i<n;i++)
+        {
+            if(i<k && k<=n-1){
+                cout<<arr[k-i-1]<<" ";
+                c++;
+            }
+            
+            if(k>n-1)
+            {
+                num=num*10 + arr[i];
+                flag=false;
+            }
+            
+            if(c==k)
+            {
+                c=0;
+                mul++;
+                k=mul*k;
+            }
+        }
+        
+        if(flag== false)
+        {
+            while(num>0){
+            cout<<num%10<<" ";
+            num=num/10;
+            }
+        }
+        
+        
+    }
 
-int main()
-{
-  int a[]={-3,4,-3,1,1};
-  cout<<isSumZero(a,5);
-}
+
+    
