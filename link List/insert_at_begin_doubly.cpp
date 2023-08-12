@@ -4,18 +4,23 @@ using namespace std;
 struct node
 {
     int data;
+    node *prev;
     node *next;
     node(int x)
     {
         data=x;
-        next=NULL;
+        prev=next=NULL;
     }
 };
 
 node *insert_at_begin(node *head,int data){
     node *temp=new node(data);
     temp->next=head;
+
+    if(head != NULL) head->prev=temp;
+
     return temp;
+   
 }
 
 int main()
@@ -25,7 +30,7 @@ int main()
     head = insert_at_begin(head,20);
     head = insert_at_begin(head,30);
 
-     head = insert_at_begin(head,40);
+    head = insert_at_begin(head,40);
 
     node *curr=head;
     while(curr != NULL)
