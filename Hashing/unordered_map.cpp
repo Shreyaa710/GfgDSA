@@ -75,20 +75,22 @@ int main()
     map<string, int> m,n;
     m["shreya"] = 1;
     m["happie"] = 0;
-    n["bread"] = 7;
-    n["bro"] = 9;
+    m["bread"] = 7;
+    m["bro"] = 9;
 
     cout<<m.size()<<endl;
+    m["shreya"]--;
 
     // m.erase("shreya");
     // m.erase(m.begin(), m.end());
     // m["shreya"]--;
 
-    for(auto it = m.begin(), e=n.begin(); it != m.end(), e !=n.end(); it++, e++)
-    cout<<(it->second)<<" "<<(e->second)<<endl;
+    // for(auto it = m.begin(), e=n.begin(); it != m.end(), e !=n.end(); it++, e++)
+    // cout<<(it->second)<<" "<<(e->second)<<endl;
 
-    // for(auto e:m , auto it:n){
-    //     cout<<e.second<<" "<<it.second<<endl;
-    // }
+    for(auto e:m){
+        if(e.second==0) m.clear();
+        cout<<e.first<<" "<<e.second<<endl;
+    }
     return 0;
 }
